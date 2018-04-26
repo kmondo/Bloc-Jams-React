@@ -7,3 +7,5 @@ const Landing = () => (
 );
 
 export default Landing;
+
+//Component 
