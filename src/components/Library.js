@@ -5,7 +5,9 @@ import albumData from './../data/albums';
 class Library extends Component {
   constructor(props) {
     super(props);
-    this.state = { albums: albumData };
+    this.state = {
+      albums: albumData
+    };
   }
 
   render() {
@@ -17,7 +19,7 @@ class Library extends Component {
               <img src={album.albumCover} alt={album.title} />
               <div>{album.title}</div>
               <div>{album.artist}</div>
-              <div>{album.songs.length} songs</div>
+              <tr>{album.songs.length} songs</tr>
             </Link>
           )
         }
