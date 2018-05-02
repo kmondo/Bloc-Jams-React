@@ -35,15 +35,15 @@ class Album extends Component {
             <tbody className="song-list">
               {
                 this.state.album.songs.map( (song, index) =>
-                  <Link to={`/album/${song.slug}`} key={index}>
-                  <span className="ion-play" />
-                  <span className="ion-pause" />
                     <tr>
-                      <td>{index + 1}</td>
+                      <td>{index + 1}
+                        <span className="ion-play"></span>
+                        <span className="ion-pause"></span>
+                      </td>
                       <td>{song.title}</td>
                       <td>{song.duration}</td>
                     </tr>
-                  </Link>
+
                 )};
             </tbody>
           </table>
