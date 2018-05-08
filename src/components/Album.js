@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
 
@@ -39,7 +38,7 @@ class Album extends Component {
   handleSongClick(song) {
     const isSameSong = this.state.currentSong === song;
     if (this.state.isPlaying && isSameSong) {
-      this.pause();
+      this.pause(song);
     } else {
       if (!isSameSong) { this.setSong(song); }
       this.play();
@@ -54,6 +53,15 @@ class Album extends Component {
     this.play();
   }
 
+  handleNextClick() {
+    const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
+    const newIndex = Math.max(0, currentIndex + 1);
+    const newSong = this.state.album.songs[newIndex];
+    if (newIndex > this.state.album.songs.length - 1) return;
+    this.setSong(newSong);
+    this.play();
+  }
+
   render() {
     return(
       <section className="album">
@@ -62,7 +70,7 @@ class Album extends Component {
           <div className="album-details">
             <h1 id="album-title">{this.state.album.title}</h1>
             <h2 className="artist">{this.state.album.artist}</h2>
-            <div id="release-info">{this.state.album.releaseInfo}</div>
+            <div id="release-info">{this.state.album.year} {this.state.album.label}</div>
           </div>
         </section>
           <table id="song-list">
@@ -71,10 +79,9 @@ class Album extends Component {
               <col id="song-title-column" />
               <col id="song-duration-column" />
             </colgroup>
-            <tbody className="song-list">
-              {
-                this.state.album.songs.map( (song, index) =>
-                    <tr className="song" key={index} onClick={() => this.handleSongClick(song)}>
+            <tbody>
+              {this.state.album.songs.map( (song, index) =>
+                    <tr className="song" key={index} onClick={ () => this.handleSongClick(song)} >
                       <td className="song-actions">
                         <button>
                           <span className="song-number">{index + 1}</span>
@@ -93,6 +100,7 @@ class Album extends Component {
             currentSong={this.state.currentSong}
             handleSongClick={() => this.handleSongClick(this.state.currentSong)}
             handlePrevClick={() => this.handlePrevClick()}
+            handleNextClick={() => this.handleNextClick()}
           />
       </section>
     );
