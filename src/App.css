@@ -1,10 +1,14 @@
 .App {
   text-align: center;
+  background: linear-gradient(0deg, black, silver 40%, white);
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  animation: App-logo-spin infinite alternate 10s ease-in-out;
   height: 80px;
+  font-variant-caps: small-caps;
+  color: rgb(16, 15, 15);
+  font-size: 4.5em;
 }
 
 .App-header {
