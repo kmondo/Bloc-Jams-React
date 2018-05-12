@@ -1,0 +1,11 @@
+.library {
+  color: black;
+}
+
+.albumcover {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 500px;
+  text-align: center;
+}

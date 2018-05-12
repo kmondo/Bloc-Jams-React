@@ -1,13 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+
 .hero-title {
-  color: rgb(37, 36, 36);
+  font-family: 'Quicksand';
+  font-variant: all-small-caps;
+  font-size: 4em;
+  color: blue;
+  line-height: 20px;
 
 }
 
 .point-title {
-  color: rgb(37, 36, 36);
+  font-family: 'Quicksand';
+  font-variant-caps: all-small-caps;
+  font-size: 3em;
+  color: black;
+  line-height: 30px;
+  margin-bottom: 20px;
 
 }
 
 .point-description {
-color: rgb(106, 103, 103);
+  color: rgb(247, 252, 87);
+  font-family: 'Quicksand';
+  font-size: 1em;
+  padding-left: 20%;
+  padding-right: 20%;
+  line-height: 17px;
+  margin-top: 10px;
 }
