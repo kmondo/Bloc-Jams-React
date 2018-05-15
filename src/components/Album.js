@@ -105,6 +105,9 @@ class Album extends Component {
   formatTime(timeInSec) {
     const mins = Math.floor(timeInSec / 60);
     const secs = Math.ceil(timeInSec % 60);
+      if (secs < 10) {
+        return ('0:0'+secs)
+      }
     return (mins+":"+secs).toString();
     // try {
     //   formatTime(timeInSec);
