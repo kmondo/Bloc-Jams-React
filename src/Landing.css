@@ -1,13 +1,42 @@
+@import url('http://fonts.googleapis.com/css?family=Josefin+Sans:700|Amatic+SC:700');
+@import url('http://fonts.googleapis.com/css?family=Fjalla+One|Cantarell:400,400italic,700italic,700');
 .hero-title {
   color: rgb(37, 36, 36);
+  /* font-size: 50px;
+  font-weight: bold;
+  font-variant-caps: all-petite-caps; */
+  text-shadow: 2px 2px 5px rgb(19, 50, 249);
+  font-family: 'Amatic SC', cursive;
+    font-weight: 800px;
+    line-height: 46px;
+    font-size: 57px;
+    margin: 0 0 23px 0;
+
 
 }
 
 .point-title {
-  color: rgb(37, 36, 36);
+  color: rgb(19, 50, 249);
+  font-variant-caps: all-small-caps;
+  font-family: 'Amatic SC', cursive;
+    font-weight: 700;
+    line-height: 46px;
+    font-size: 46px;
+    margin: 0 0 23px 0;
+
 
 }
 
 .point-description {
-color: rgb(106, 103, 103);
+  color: rgb(37, 36, 36);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 23px;
+  margin: 0 0 23px 0;
+  padding: 0 7em 0 7em;
+}
+
+.selling-points {
+  border: 10px black;
 }
