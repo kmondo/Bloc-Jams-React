@@ -106,6 +106,9 @@ class Album extends Component {
   formatTime(timeInSec) {
     const mins = Math.floor(timeInSec / 60);
     const secs = Math.ceil(timeInSec % 60);
+      if (secs < 10) {
+        return "0:0"+ secs;
+      }
     return (mins+":"+secs).toString();
     // try {
     //   formatTime(timeInSec);
@@ -126,6 +129,20 @@ class Album extends Component {
             <div id="release-info">{this.state.album.year} {this.state.album.label}</div>
           </div>
         </section>
+        <section className='controlbar'>
+          <PlayerBar
+          isPlaying={this.state.isPlaying}
+          currentSong={this.state.currentSong}
+          currentTime={this.audioElement.currentTime}
+          duration={this.audioElement.duration}
+          volume={this.state.volume}
+          handleSongClick={() => this.handleSongClick(this.state.currentSong)}
+          handlePrevClick={() => this.handlePrevClick()}
+          handleNextClick={() => this.handleNextClick()}
+          handleTimeChange={(e) => this.handleTimeChange(e)}
+          handleVolumeChange={(e) => this.handleVolumeChange(e)}
+          formatTime={(timeInSec) => this.formatTime(timeInSec)}
+        />
           <table id="song-list">
             <colgroup>
               <col id="song-number-column" />
@@ -136,9 +153,10 @@ class Album extends Component {
               {this.state.album.songs.map( (song, index) =>
                     <tr className="song" key={index} onClick={ () => this.handleSongClick(song)} >
                       <td className="song-actions">
+                        <span className="song-number">{index + 1 + ". "}</span>
                         <button>
-                          <span className="song-number">{index + 1}</span>
                           <span className="ion-play"></span>
+                          <span>  </span>
                           <span className="ion-pause"></span>
                         </button>
                       </td>
@@ -148,7 +166,8 @@ class Album extends Component {
                 )}
             </tbody>
           </table>
-          <PlayerBar
+          {/* <section className='controlbar'>
+            <PlayerBar
             isPlaying={this.state.isPlaying}
             currentSong={this.state.currentSong}
             currentTime={this.audioElement.currentTime}
@@ -160,7 +179,8 @@ class Album extends Component {
             handleTimeChange={(e) => this.handleTimeChange(e)}
             handleVolumeChange={(e) => this.handleVolumeChange(e)}
             formatTime={(timeInSec) => this.formatTime(timeInSec)}
-          />
+          /> */}
+        </section>
       </section>
     );
   }

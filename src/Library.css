@@ -2,9 +2,11 @@
 
 
 .albumcover {
-  float:inherit;
+  width:375px; /* you can use % */
+    height: auto;
+  /* float:inherit;
   display: inline;
-  width: 50%;
+  width: 50%; */
 
   }
 
@@ -17,5 +19,5 @@
     font-family: 'Amatic SC', cursive;
     font-weight: 700;
     line-height: 46px;
-    font-size: 46px;
+    font-size: 40px;
   }
