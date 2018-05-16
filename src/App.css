@@ -1,10 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import url('http://fonts.googleapis.com/css?family=Dancing+Script:700|EB+Garamond');
+@import url('http://fonts.googleapis.com/css?family=Fjalla+One|Cantarell:400,400italic,700italic,700');
+
+html, body, #root, .App {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.Navigation {
+  font-size: 20px;
+
+}
+
 .App {
+  overflow: auto;
   text-align: center;
+  background: linear-gradient(0deg, rgb(93, 93, 91), rgb(157, 157, 155) 40%, rgb(225, 225, 223));
+  font-family: 'Fjalla One', sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    line-height: 67px;
+    font-size: 43px;
+  /* font-family: 'Quicksand', sans-serif; */
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  display: inline-block;
+  animation:spin 7s linear infinite;
   height: 80px;
+  font-variant: small-caps;
+  color: rgb(16, 15, 15);
+  /* font-size: 4.5em;
+  font-weight: bold; */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(20deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-20deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 .App-header {
@@ -20,9 +66,4 @@
 
 .App-intro {
   font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }

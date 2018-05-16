@@ -1,0 +1,23 @@
+@import url('http://fonts.googleapis.com/css?family=Fjalla+One|Cantarell:400,400italic,700italic,700');
+
+
+.albumcover {
+  width:375px; /* you can use % */
+    height: auto;
+  /* float:inherit;
+  display: inline;
+  width: 50%; */
+
+  }
+
+  .albuminfo {
+    text-align: center;
+    visibility: visible;
+    display: inline;
+    color: black;
+    font-variant-caps: all-small-caps;
+    font-family: 'Amatic SC', cursive;
+    font-weight: 700;
+    line-height: 46px;
+    font-size: 40px;
+  }
